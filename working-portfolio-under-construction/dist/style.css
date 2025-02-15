@@ -1,0 +1,310 @@
+/* General Styles */
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #0a0a0a;
+  color: white;
+  overflow-x: hidden;
+}
+
+/* Navbar - Barra de navegación */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(10, 10, 10, 0.9);
+  padding: 15px;
+  text-align: center;
+  z-index: 1000;
+}
+
+#navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+#navbar ul li {
+  display: inline;
+}
+
+#navbar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* Ocultar toggle en pantallas grandes */
+.menu-toggle {
+  display: none;
+}
+
+/* Full Page Sections - Secciones de pantalla completa */
+.full-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Background Images - Imágenes de fondo */
+#welcome {
+  background: url("https://imgur.com/vc3uX77.jpg") no-repeat center center/cover;
+}
+#experience {
+  background: url("https://imgur.com/izGfEni.jpg") no-repeat center center/cover;
+}
+#projects {
+  background: url("https://imgur.com/lmhaaM8.jpg") no-repeat center center/cover;
+}
+#about {
+  background: url("https://imgur.com/PLkosUE.jpg") no-repeat center center/cover;
+}
+#contact {
+  background: url("https://imgur.com/AXsLfE6.jpg") no-repeat center center/cover;
+}
+
+/* Experience Section - Sección de Experiencia */
+.experience-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 90%;
+  align-items: center;
+}
+
+.experience-item {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+}
+
+.experience-logo {
+  width: 100px;
+  transition: filter 0.3s ease, transform 0.2s ease-in-out;
+  filter: grayscale(100%);
+}
+
+.experience-logo:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
+
+.experience-text {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+
+/* Projects Section - Contenedor principal */
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 90%;
+    margin: auto;
+    gap: 20px;
+    max-width: 1200px;
+    position: relative;
+}
+
+/* Ajuste del título de la sección Projects */
+#projects h2 {
+    margin-top: 120px;
+    text-align: center;
+}
+
+/* Grid principal de proyectos */
+.projects-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    flex-wrap: nowrap;
+}
+
+.project-item {
+    width: 180px;
+    height: 180px;
+    background: rgba(0, 123, 255, 0.6);
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.project-item:hover {
+    background: rgba(0, 123, 255, 0.9);
+    transform: scale(1.05);
+}
+
+/* Expansión de Proyectos */
+.expanded-project {
+    display: none;
+    width: 100%;
+    padding: 20px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    text-align: center;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out;
+    max-width: 1000px;
+}
+
+.expanded-project.active {
+    display: flex;
+}
+
+/* Barra lateral */
+.projects-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+    width: 250px;
+    position: relative;
+    right: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.projects-sidebar .project-item {
+    width: 126px;
+    height: 126px;
+}
+
+/* Contenedor de tarjetas dentro de los proyectos */
+.project-cards-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 20px;
+}
+
+/* Tarjetas individuales */
+.project-card {
+    background: #2b6cb0;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    flex: 1 1 auto;
+    min-width: 280px;
+    max-width: 320px;
+}
+
+.project-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    font-size: 14px;
+}
+
+/* Video en hover */
+.project-video-container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    pointer-events: none;
+}
+
+.project-item:hover .project-video-container {
+    opacity: 1;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 1024px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .projects-sidebar {
+        position: relative;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin-top: 20px;
+    }
+    .projects-sidebar .project-item {
+        width: 100px;
+        height: 100px;
+    }
+    .project-cards-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .project-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .projects-grid {
+        flex-direction: column;
+        max-width: 90%;
+    }
+    .projects-sidebar {
+        flex-direction: row;
+        align-items: center;
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .project-item {
+        width: 120px;
+        height: 120px;
+    }
+    .project-card {
+        width: 100%;
+        max-width: 300px;
+    }
+}
